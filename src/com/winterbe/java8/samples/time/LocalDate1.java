@@ -13,14 +13,16 @@ import java.util.Locale;
  */
 public class LocalDate1 {
 
-    //test
     public static void main(String[] args) {
+        //LocalDate is immutable, when you get a new LocalDate, you create a new one.
         LocalDate today = LocalDate.now();
         LocalDate tomorrow = today.plus(1, ChronoUnit.DAYS);
+        LocalDate nextMonth = today.plusMonths(1);
         LocalDate yesterday = tomorrow.minusDays(2);
 
         System.out.println(today);
         System.out.println(tomorrow);
+        System.out.println(nextMonth);
         System.out.println(yesterday);
 
         LocalDate independenceDay = LocalDate.of(2014, Month.JULY, 4);
@@ -33,9 +35,8 @@ public class LocalDate1 {
                         .withLocale(Locale.GERMAN);
 
         LocalDate xmas = LocalDate.parse("24.12.2014", germanFormatter);
+
         System.out.println(xmas);   // 2014-12-24
-
-
     }
 
 }

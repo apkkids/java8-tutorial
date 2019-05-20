@@ -9,6 +9,7 @@ import java.time.format.FormatStyle;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Benjamin Winterberg
@@ -18,20 +19,25 @@ public class LocalTime1 {
     public static void main(String[] args) {
 
         // get the current time
+        System.out.println("=======Clock/Instant/Date===========");
         Clock clock = Clock.systemDefaultZone();
         long t0 = clock.millis();
         System.out.println(t0);
 
         Instant instant = clock.instant();
+        System.out.println(instant);
         Date legacyDate = Date.from(instant);
+        System.out.println(legacyDate);
 
-
+        System.out.println("=======ZoneId===========");
+        System.out.println("All ZoneIds:"+ZoneId.getAvailableZoneIds());
         ZoneId zone1 = ZoneId.of("Europe/Berlin");
         ZoneId zone2 = ZoneId.of("Brazil/East");
 
         System.out.println(zone1.getRules());
         System.out.println(zone2.getRules());
 
+        System.out.println("=======LocalTime===========");
         // time
         LocalTime now1 = LocalTime.now(zone1);
         LocalTime now2 = LocalTime.now(zone2);
@@ -48,7 +54,7 @@ public class LocalTime1 {
 
 
         // create time
-
+        System.out.println("=======Create Time===========");
         LocalTime now = LocalTime.now();
         System.out.println(now);
 
@@ -63,10 +69,7 @@ public class LocalTime1 {
         LocalTime leetTime = LocalTime.parse("13:37", germanFormatter);
         System.out.println(leetTime);
 
-
         // to legacy date
-
-
     }
 
 }
