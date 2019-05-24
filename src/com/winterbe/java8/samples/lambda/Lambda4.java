@@ -20,8 +20,11 @@ public class Lambda4 {
 
         Lambda2.Converter<Integer, String> stringConverter2 = (from) -> {
             outerNum = 13;
+            outerStaticNum = 47;
             return String.valueOf(from);
         };
+        System.out.println(outerNum); //0
+        System.out.println(outerStaticNum); //0
 
         String[] array = new String[1];
         Lambda2.Converter<Integer, String> stringConverter3 = (from) -> {
