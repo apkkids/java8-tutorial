@@ -5,7 +5,7 @@ import com.winterbe.java8.samples.lambda.Person;
 import java.util.Comparator;
 
 /**
- * @Description TODO
+ * @Description Comparators are well known from older versions of Java. Java 8 adds various default methods to the interface.
  * @Author alex
  * @Date 2019/5/25 18:05
  */
