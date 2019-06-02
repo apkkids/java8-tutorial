@@ -1,6 +1,7 @@
 package com.winterbe.java8.samples.stream;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,6 +31,9 @@ public class Streams1 {
                 .forEach(System.out::println);
 
         // "aaa2", "aaa1"
+        stringCollection.stream().filter(s -> s.startsWith("b")).forEach(s -> {
+            System.out.println("output:" + s);
+        });
 
 
         // sorting
@@ -42,6 +46,11 @@ public class Streams1 {
 
         // "aaa1", "aaa2"
 
+        stringCollection
+                .stream()
+                .sorted(Comparator.reverseOrder())
+                .filter(s -> s.startsWith("b"))
+                .forEach(System.out::println);
 
         // mapping
 
@@ -74,9 +83,7 @@ public class Streams1 {
 
         System.out.println(noneStartsWithZ);      // true
 
-
         // counting
-
         long startsWithB = stringCollection
                 .stream()
                 .filter((s) -> s.startsWith("b"))
@@ -86,7 +93,6 @@ public class Streams1 {
 
 
         // reducing
-
         Optional<String> reduced =
                 stringCollection
                         .stream()
@@ -95,8 +101,5 @@ public class Streams1 {
 
         reduced.ifPresent(System.out::println);
         // "aaa1#aaa2#bbb1#bbb2#bbb3#ccc#ddd1#ddd2"
-
-
     }
-
 }

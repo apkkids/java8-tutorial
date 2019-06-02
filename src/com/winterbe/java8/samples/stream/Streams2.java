@@ -29,9 +29,5 @@ public class Streams2 {
                 .forEach(System.out::println);
 
         System.out.println(stringCollection);
-
-        
-
     }
-
 }
