@@ -32,8 +32,8 @@ public class Streams5 {
                 .stream()
                 .filter(s -> s.startsWith("a"));
 
-        streamSupplier.get().anyMatch(s -> true);
-        streamSupplier.get().noneMatch(s -> true);
+        System.out.println(streamSupplier.get().anyMatch(s -> true));
+        System.out.println(streamSupplier.get().noneMatch(s -> true));
     }
 
     // stream has already been operated upon or closed
@@ -43,6 +43,8 @@ public class Streams5 {
             .filter(s -> s.startsWith("a"));
 
         stream.anyMatch(s -> true);
+        //这里将会报错：stream has already been operated upon or closed
+        //一个流只能使用一次，如果要多次使用，请采用test8中的方法
         stream.noneMatch(s -> true);
     }
 
