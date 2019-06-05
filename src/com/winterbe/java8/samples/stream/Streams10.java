@@ -29,6 +29,7 @@ public class Streams10 {
     }
 
     public static void main(String[] args) {
+        //introduce some methods of Collectors to get different results.
         List<Person> persons =
             Arrays.asList(
                 new Person("Max", 18),
@@ -36,15 +37,15 @@ public class Streams10 {
                 new Person("Pamela", 23),
                 new Person("David", 12));
 
-//        test1(persons);
-//        test2(persons);
+        test1(persons);
+        test2(persons);
 //        test3(persons);
 //        test4(persons);
 //        test5(persons);
 //        test6(persons);
 //        test7(persons);
 //        test8(persons);
-        test9(persons);
+//        test9(persons);
     }
 
     private static void test1(List<Person> persons) {
