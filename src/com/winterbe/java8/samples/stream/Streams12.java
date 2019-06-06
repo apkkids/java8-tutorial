@@ -15,9 +15,9 @@ public class Streams12 {
     public static void main(String[] args) {
         List<String> strings = Arrays.asList("a1", "a2", "b1", "c2", "c1");
 
-//        test1();
+        test1();
 //        test2(strings);
-        test3(strings);
+//        test3(strings);
 //        test4();
     }
 

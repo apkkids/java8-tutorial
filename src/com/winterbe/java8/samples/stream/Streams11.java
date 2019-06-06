@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * @author Benjamin Winterberg
+ * some reduce methods in Stream
  */
 public class Streams11 {
 
