@@ -15,10 +15,10 @@ public class Streams12 {
     public static void main(String[] args) {
         List<String> strings = Arrays.asList("a1", "a2", "b1", "c2", "c1");
 
-        test1();
+//        test1();
 //        test2(strings);
 //        test3(strings);
-//        test4();
+        test4();
     }
 
     private static void test4() {
@@ -48,6 +48,7 @@ public class Streams12 {
     }
 
     private static void test3(List<String> strings) {
+        //in parallelStream, sort must be executed after all filter and map operation are completion.
         strings
             .parallelStream()
             .filter(s -> {

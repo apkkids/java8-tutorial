@@ -18,7 +18,7 @@ public class Streams13 {
         System.out.println(Arrays.toString(randoms));
 
 
-        int[] nums = IntStream.iterate(1, n -> n * 2)
+        int[] nums = IntStream.iterate(1, n -> n * 3)
                 .limit(11)
                 .toArray();
         System.out.println(Arrays.toString(nums));

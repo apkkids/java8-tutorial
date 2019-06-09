@@ -46,6 +46,7 @@ public class Streams10 {
     }
 
     private static void test1(List<Person> persons) {
+        //collect method turns a stream to a List or Map or some other Collection.
         List<Person> filtered =
                 persons
                         .stream()
