@@ -35,7 +35,7 @@ public class Streams10 {
                         new Person("David", 12));
 
         test1(persons);
-        test2(persons);
+//        test2(persons);
 //        test3(persons);
 //        test4(persons);
 //        test5(persons);
