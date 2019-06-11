@@ -21,7 +21,7 @@ public class Streams10 {
 
         @Override
         public String toString() {
-            return name;
+            return String.format("{name=%s,age=%d}",name,age);
         }
     }
 
@@ -34,10 +34,10 @@ public class Streams10 {
                         new Person("Pamela", 23),
                         new Person("David", 12));
 
-        test1(persons);
+//        test1(persons);
 //        test2(persons);
 //        test3(persons);
-//        test4(persons);
+        test4(persons);
 //        test5(persons);
 //        test6(persons);
 //        test7(persons);
@@ -54,6 +54,7 @@ public class Streams10 {
                         .collect(Collectors.toList());
 
         System.out.println(filtered);    // [Peter, Pamela]
+        filtered.forEach(person -> System.out.println(person));
     }
 
     private static void test2(List<Person> persons) {
@@ -75,6 +76,11 @@ public class Streams10 {
                 .collect(Collectors.averagingInt(p -> p.age));
 
         System.out.println(averageAge);     // 19.0
+
+        Double averageAgeDouble = persons
+                .stream()
+                .collect(Collectors.averagingDouble(p -> p.age));
+        System.out.println(averageAgeDouble);
     }
 
     private static void test4(List<Person> persons) {
@@ -85,6 +91,12 @@ public class Streams10 {
 
         System.out.println(ageSummary);
         // IntSummaryStatistics{count=4, sum=76, min=12, average=19,000000, max=23}
+
+        DoubleSummaryStatistics summaryStatistics =
+                persons
+                        .stream()
+                        .collect(Collectors.summarizingDouble(p -> p.age));
+        System.out.println(summaryStatistics);
     }
 
     private static void test5(List<Person> persons) {

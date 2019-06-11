@@ -21,6 +21,7 @@ public class SupplierExam {
 
     public static void main(String[] args) {
         Supplier<Person> personSupplier = Person::new;
+        System.out.println(personSupplier.getClass());
         Person a = personSupplier.get();
         personSupplier.get();
         new Person("Alex");
